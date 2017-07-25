@@ -1,0 +1,17 @@
+<h1>Notas del usuario <%= @user.name %></h1>
+
+<ul>
+  <% @notes.each do |note| %>
+    <li><%= note.name  %> | 
+    <%= link_to "Editar", edit_group_user_note_path(note.user.group,note.user,note)  %> |
+    <%= link_to "Eliminar", [note.user.group, note.user, note], data:{:confirm => 'Are you sure?'}, :method => :delete, class: :'btn btn-danger'%>
+      
+
+    </li>
+    
+  <% end %>
+</ul>
+
+
+<%= link_to 'Nuevo apunte', new_group_user_note_path(@user), class: :"btn btn-info" %>
+<%= link_to "Volver a usuarios de #{@user.group.name}", group_users_path(@user) %>

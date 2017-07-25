@@ -1,0 +1,19 @@
+<%= form_for([@user.group,@user]) do |f| %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+   
+  <div class="field">
+    <%= f.label :group %><br />
+    <%= f.text_field :group %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+    
+<% end %>
+  

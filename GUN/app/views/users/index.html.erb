@@ -1,0 +1,19 @@
+<h3>Usuarios de <%= @group.name %></h3>
+
+<% @users.each do |user| %>  
+  <li>
+    <%= user.name  %> |
+    <%= link_to "Ver apuntes", [user.group,user,Note] %> |
+    <%= link_to "Destroy", [user.group,user], data:{ :confirm => 'Are you sure?'}, :method => :delete, class: :'btn btn-danger' %> |
+
+    <%= link_to 'Editar', edit_group_user_path(user.group, user) %>
+
+
+  </li>
+
+<%end %>
+
+
+<%= link_to 'Nuevo Usuario', new_group_user_path(params[:group_id]), class: :'btn btn-info' %>
+
+<%= link_to "Volver a grupos", groups_path %>

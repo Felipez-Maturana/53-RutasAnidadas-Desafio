@@ -1,0 +1,14 @@
+<h1>Comments#index</h1>
+<p>Find me in app/views/comments/index.html.erb</p>
+
+<ul>
+	
+<% @comments.each do |c|%>
+<li> <%= c.content %>
+<%= link_to "Edit", edit_post_comment_path(@post, c) %> |
+<%= link_to "Borrar", post_comment_path(@post, c), method: :delete, data: {confirm: "Are you sure?"}  %>
+</li> 
+<% end %>
+</ul>
+
+

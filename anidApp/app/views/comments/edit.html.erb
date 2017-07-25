@@ -1,0 +1,7 @@
+<h1>editando el comentario</h1>
+
+<h3>New Comment</h3>
+<%= form_for [@post,@comment] do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "Update" %>	
+<% end %>
