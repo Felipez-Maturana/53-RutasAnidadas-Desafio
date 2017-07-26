@@ -14,4 +14,4 @@
 
 
 <%= link_to 'Nuevo apunte', new_group_user_note_path(@user), class: :"btn btn-info" %>
-<%= link_to "Volver a usuarios de #{@user.group.name}", group_users_path(@user) %>
+<%= link_to "Volver a usuarios de #{@user.group.name}", group_users_path(@user.group) %>
